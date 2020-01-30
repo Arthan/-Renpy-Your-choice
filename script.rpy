@@ -1,27 +1,28 @@
 
 #Setting
 
-$turtorial = False 
-
 
 init:
+    $ tutorial = False 
+
     $ pn = ""
     $ psn = ""
     $ pal = ""
 
-#Characters
+    #Characters
+    
+    
+    define p = DynamicCharacter("pn", color="#fd9501") 
+    
+    define ps = DynamicCharacter("psn")
+    define pa = DynamicCharacter("pal")
+    
+    define d = Character("Douchebags")
+    define t = Character("Teacher")
+    define j = Character("Jennifer", who_color ="#524de1")
+    define cr = Character("Creator", color = "#00F429")
+    define dc = Character("Dot")
 
-
-define p = DynamicCharacter("pn", color="#fd9501") 
-
-define ps = DynamicCharacter("psn")
-define pa = DynamicCharacter("pal")
-
-define d = Character("Douchebags")
-define t = Character("Teacher")
-define j = Character("Jennifer", who_color ="#524de1")
-define cr = Character("Creator", color = "#00F429")
-define dc = Character("Dot")
 
 # The game starts here.
 
@@ -58,7 +59,7 @@ label start:
         menu:
             "Introduction Day":
                 jump story
-            "Pass turtorials":
+            "Pass tutorials":
                 jump game
             "Change name":
                 jump nameMc

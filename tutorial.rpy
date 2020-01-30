@@ -20,7 +20,7 @@ label nameMc:
         "Oh! No! It is not [p]":
             jump nameMc
         "Oh! Yes!It is [p]":
-            if turtorial:
+            if tutorial:
                 if psn == "":
                     jump surnameMc
                 else:
@@ -52,7 +52,7 @@ label surnameMc:
         "Oh! It is [ps] but not [p]":
             jump nameMc
         "Oh! Yes!It is [p] [ps]":
-            if turtorial:
+            if tutorial:
                 if pal == "":
                     "I have a nickname too and friends always called me by this"
                     jump aliasMc
@@ -78,7 +78,7 @@ label aliasMc:
     $ pal = pal.title()
     # Yay, your name doesn't hit any conditions. You can name them that!
     "[p] [ps] aka [pa]!"
-    if turtorial:
+    if tutorial:
         jump name_chk
     else:
         jump aliasask
@@ -107,12 +107,12 @@ label storytell:
             jump game
         
         "I wish to see some past":
-            jump turtorial
+            jump tutorial
 
-label turtorial:
+label tutorial:
     "Let me start from begin"
     ####### STORY #############
-    $ turtorial = True
+    $ tutorial = True
     jump nameMc
 
 label continuturt:
@@ -129,7 +129,7 @@ label game:
     with dissolve
     p "Where am i?"
     p "Oh ok i am in my room"
-    if turtorial:
+    if tutorial:
         jump nameask
     else:
         "But hey?"
@@ -144,7 +144,7 @@ label game:
     
     "Meet some dushbags"
     d "How they called you"
-    if turtorial:
+    if tutorial:
         jump aliasask
     else:
         jump aliasMc
@@ -162,7 +162,7 @@ label game:
     p "No you can call me [pa]"
     t "The question was..."
     t "What is your surname"
-    if turtorial:
+    if tutorial:
         jump surnameask
     else:
         jump surnameMc
