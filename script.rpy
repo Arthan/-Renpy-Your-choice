@@ -1,4 +1,3 @@
-
 #Setting
 
 
@@ -12,10 +11,10 @@ init:
     #Characters
     
     
-    define p = DynamicCharacter("pn", color="#fd9501") 
+define plr_name = DynamicCharacter("pn", color="#fd9501") 
     
-    define ps = DynamicCharacter("psn")
-    define pa = DynamicCharacter("pal")
+define plr_surname = DynamicCharacter("psn")
+define plr_alias = DynamicCharacter("pal")
     
     define d = Character("Douchebags")
     define t = Character("Teacher")
@@ -27,12 +26,11 @@ init:
 # The game starts here.
 
 label start:
+    show screen TestScreen
+
 
     while True:
-        "Day : [calendar.yy]/[calendar.mn]/[calendar.dd]" 
-        "Weekday : [calendar.wk] [calendar.we]   Season : [calendar.sz]    Daytime : [calendar.dt] "
-        "Temperaure [calendar.temp]"
-        "Time : [calendar.hh]:[calendar.mm]   Seconds : [calendar.ss] / [calendar.ms]"
+        
         menu:
             "2 Hours":
                 $calendar.add(2,0,0,0)
@@ -63,3 +61,11 @@ label start:
                 jump game
             "Change name":
                 jump nameMc
+
+
+    
+
+    label game:
+
+        cr " Location manager here"
+    
